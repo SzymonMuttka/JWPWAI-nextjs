@@ -1,11 +1,16 @@
 import classes from './page.module.css';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { getMeal } from '@/lib/meals';
 
 export default async function MealsDetalsPage({params}) {
     const { slug } = await params;
     const meal = await getMeal(slug);
+
+    if(!meal){
+        notFound();
+    }
 
     return(
         <Suspense fallback={<p className={classes.loading}>Fetching meal...</p>}>

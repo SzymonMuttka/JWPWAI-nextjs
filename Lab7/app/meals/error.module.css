@@ -1,0 +1,15 @@
+.error{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error h1{
+    color: white;
+    font-weight: bold;
+}
+
+.error p{
+    color: red;
+}
